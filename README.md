@@ -2,6 +2,7 @@
 
 ## Integrantes
 Stefanny Alexandra Rodriguez Zapata
+Darly Johana Zambrano Zambrano
 
 ## Descripción
 Descripción del proyecto y su propósito.
