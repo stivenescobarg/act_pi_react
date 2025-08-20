@@ -5,6 +5,8 @@ Stefanny Alexandra Rodriguez Zapata
 Darly Johana Zambrano Zambrano
 Saul Stiven Escobar Gómez
 
+Grupo 1
+
 ## Descripción
 Descripción del proyecto y su propósito.
 
