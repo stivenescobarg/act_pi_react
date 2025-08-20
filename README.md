@@ -1,5 +1,5 @@
 # Nombre del Proyecto
-Checklist de hábitos diarios"
+Checklist de hábitos diarios
 
 ## Integrantes
 Stefanny Alexandra Rodriguez Zapata
@@ -9,7 +9,12 @@ Saul Stiven Escobar Gómez
 Grupo 1
 
 ## Descripción
-Descripción del proyecto y su propósito.
+Checklist de Hábitos Diarios es una aplicación web desarrollada con React y TypeScript, diseñada para ayudar a los usuarios a gestionar y mantener un control visual claro y eficiente de sus hábitos diarios. Esta herramienta facilita el seguimiento constante de las rutinas y actividades que los usuarios desean incorporar en su vida diaria, promoviendo así la constancia y la disciplina.
+
+La aplicación permite a los usuarios seleccionar y crear una lista personalizada de hábitos que desean completar cada día. Cada hábito puede ser marcado como completado o pendiente, ofreciendo un sistema visual sencillo e intuitivo que motiva a cumplir con los objetivos diarios. Además, la app puede mostrar el progreso acumulado, ayudando a los usuarios a identificar patrones, fortalecer su compromiso y fomentar la creación de hábitos saludables a largo plazo.
+
+Gracias a la combinación de React para la interfaz dinámica y TypeScript para un código robusto y mantenible, la aplicación ofrece una experiencia de usuario fluida y confiable, ideal para quienes buscan mejorar su productividad personal y bienestar mediante el seguimiento constante de sus actividades diarias.
+
 
 ## Características
 - Lista de funcionalidades principales
