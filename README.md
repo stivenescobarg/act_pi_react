@@ -1,5 +1,8 @@
 # Nombre del Proyecto
 
+## Integrantes
+Stefanny Alexandra Rodriguez Zapata
+
 ## Descripción
 Descripción del proyecto y su propósito.
 
