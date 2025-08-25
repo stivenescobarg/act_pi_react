@@ -61,7 +61,7 @@ Edición dinámica: posibilidad de modificar hábitos ya creados.
 ## Contacto
 ### Información del Grupo
 - **Institución**: SENA
-- **Programa**: [Nombre del programa]
-- **Ficha**: [Número de ficha]
-- **Instructor**: [Nombre del instructor]
-- **Período**: [Año - Trimestre]
+- **Programa**: [Análisis y Desarrollo de Software]
+- **Ficha**: [3144585]
+- **Instructor**: [Jhon Fredy ]
+- **Período**: [2025 - 2]
