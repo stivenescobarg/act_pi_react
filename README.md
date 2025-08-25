@@ -13,7 +13,7 @@ Checklist de Hábitos Diarios es una aplicación web desarrollada con React y Ty
 
 La aplicación permite a los usuarios seleccionar y crear una lista personalizada de hábitos que desean completar cada día. Cada hábito puede ser marcado como completado o pendiente, ofreciendo un sistema visual sencillo e intuitivo que motiva a cumplir con los objetivos diarios. Además, la app puede mostrar el progreso acumulado, ayudando a los usuarios a identificar patrones, fortalecer su compromiso y fomentar la creación de hábitos saludables a largo plazo.
 
-Gracias a la combinación de React para la interfaz dinámica y TypeScript para un código robusto y mantenible, la aplicación ofrece una experiencia de usuario fluida y confiable, ideal para quienes buscan mejorar su productividad personal y bienestar mediante el seguimiento constante de sus actividades diarias.
+Gracias a la combinación de React para la interfaz dinámica y TypeScript para un código robusto y mantenible, la aplicación ofrece una experiencia de usuario fluida y confiable, ideal para quienes buscan mejorar su productividad personal y bienestar mediante el seguimiento constante de sus actividades diarias.,
 
 
 ## Características
