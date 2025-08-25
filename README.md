@@ -17,31 +17,32 @@ Gracias a la combinación de React para la interfaz dinámica y TypeScript para 
 
 
 ## Características
-- Lista de funcionalidades principales
-- Tecnologías utilizadas
+Gestión de hábitos/tareas: marcar como completadas y elimina.
+
+Interfaz reactiva: gracias a React, los cambios se actualizan en tiempo real sin recargar la página.
+
+Diseño responsivo y moderno: interfaz amigable, con estilos atractivos.
+
+Componentización: cada parte de la app está construida como un componente reutilizable.
+
+Edición dinámica: posibilidad de modificar hábitos ya creados.
 
 ## Registro de Avances por Clase
 **Nota**: Todos los avances documentados en esta sección deben coincidir con los commits realizados en el repositorio, incluyendo el autor correspondiente de cada commit. Cada tarea completada, en progreso o pendiente debe estar respaldada por un commit asociado en el repositorio, con mensajes descriptivos que reflejen la tarea realizada y el nombre del autor.
 
 ### Clase 1
-- **Fecha**: [DD/MM/YYYY]
+- **Fecha**: [20/08/2025]
 - **Objetivos**:
-  - [Objetivo 1]
-  - [Objetivo 2]
+  - [Identificación del proyecto]
+  - [Descripción del proyecto]
 - **Avances**:
-  - ✅ [Tarea completada 1] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
-  - ✅ [Tarea completada 2] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
-- **En progreso**:
-  - 🔄 [Tarea en progreso] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
-- **Pendiente**:
-  - ⏳ [Tarea pendiente] - Responsable: [Nombre]
-- **Notas**:
-  - [Descripción de problemas, soluciones o decisiones tomadas]
+  - ✅ [Identificación] - Responsable: [Stiven] - Commit: [Nombre del proyecto]
+  - ✅ [Descripción] - Responsable: [Darly] - Commit: [Descripción del proyecto]
 
 ### Clase 2
-- **Fecha**: [DD/MM/YYYY]
+- **Fecha**: [25/08/2025]
 - **Objetivos**:
-  - [Objetivo 1]
+  - []
   - [Objetivo 2]
 - **Avances**:
   - ✅ [Tarea completada 1] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
