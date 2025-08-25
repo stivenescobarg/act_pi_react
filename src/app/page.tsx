@@ -15,5 +15,16 @@ export default function Page() {
   const toggleHabit = (id: number) => {
     setHabits(habits.map(h => h.id === id ? { ...h, completed: !h.completed } : h));
   };
+      const completedCount = habits.filter(h => h.completed).length;
+  const totalCount = habits.length;
+
+  return (
+    <div className="app-container">
+      <h1>✅ Checklist de Hábitos Diarios</h1>
+      <p>Progreso: {completedCount} de {totalCount} completados</p>
+
+      <HabitList habits={habits} toggleHabit={toggleHabit} />
+    </div>
+  );
 
 }
