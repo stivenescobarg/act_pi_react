@@ -42,17 +42,19 @@ Edición dinámica: posibilidad de modificar hábitos ya creados.
 ### Clase 2
 - **Fecha**: [25/08/2025]
 - **Objetivos**:
-  - []
-  - [Objetivo 2]
+  - [Pagina principal completa]
+  - [Componentes reutilizables]
+  - [Estilizado]
 - **Avances**:
-  - ✅ [Tarea completada 1] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
-  - ✅ [Tarea completada 2] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
+  - ✅ [Page] - Responsable: [stiven] - Commit: [Pagina principal, con sus 8 tareas]
+  - ✅ [Components] - Responsable: [Darly] - Commit: [Creación de componentes hijos]
+  - ✅ [CSS] - Responsable: [Stefanny] - Commit: [Creación de estilo de proyecto]
 - **En progreso**:
-  - 🔄 [Tarea en progreso] - Responsable: [Nombre] - Commit: [Hash o descripción del commit]
+  - 🔄 [Lista de chequeo noche] - Responsable: [Grupo 1] - Commit: [Hash o descripción del commit]
 - **Pendiente**:
-  - ⏳ [Tarea pendiente] - Responsable: [Nombre]
+  - ⏳ [Lista, habitos noche] - Responsable: [Grupo 1]
 - **Notas**:
-  - [Descripción de problemas, soluciones o decisiones tomadas]
+  - [Cambio es los archivos y css]
 
 ### Clase [N]
 - **Fecha**: [DD/MM/YYYY]
