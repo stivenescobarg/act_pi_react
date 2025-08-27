@@ -10,11 +10,22 @@ interface HabitItemProps {
 
 export default function HabitItem({ habit, toggleHabit }: HabitItemProps) {
   return (
-   <div className={`habit-item ${habit.completed ? "completed" : "pending"}`}>
-  <span>{habit.name}</span>
-  <button onClick={() => toggleHabit(habit.id)}>
-    {habit.completed ? "Desmarcar" : "Completar"}
-  </button>
-</div>
+    <div className={habit-item ${habit.completed ? "completed" : "pending"}}>
+      <span>{habit.name}</span>
+      <button onClick={() => toggleHabit(habit.id)}>
+        {habit.completed ? "Desmarcar" : "Completar"}
+      </button>
+
+      {habit.history.length > 0 && (
+        <details>
+          <summary>📅 Historial</summary>
+          <ul>
+            {habit.history.map((date, i) => (
+              <li key={i}>{date}</li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
   );
 }
