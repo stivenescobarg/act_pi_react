@@ -1,45 +1,59 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import HabitList from "../../components/HabitList";
 import { Habit } from "../../lib/types";
 
 export default function Page() {
+  const [habitTime, setHabitTime] = useState<"morning" | "night">("morning");
+
   const [morningHabits, setMorningHabits] = useState<Habit[]>([
     { id: 1, name: "Beber agua", completed: false, history: [] },
     { id: 2, name: "Meditar 10 min", completed: false, history: [] },
+    { id: 3, name: "Caminar 30 min", completed: false, history: [] },
   ]);
+
   const [nightHabits, setNightHabits] = useState<Habit[]>([
-    { id: 3, name: "Leer 20 páginas", completed: false, history: [] },
-    { id: 4, name: "Escribir en el diario", completed: false, history: [] },
+    { id: 4, name: "Leer 10 páginas", completed: false, history: [] },
+    { id: 5, name: "Escribir diario", completed: false, history: [] },
+    { id: 6, name: "Planear el día siguiente", completed: false, history: [] },
   ]);
 
   const [newHabit, setNewHabit] = useState("");
-  const [habitTime, setHabitTime] = useState<"morning" | "night">("morning");
 
-  // ✅ Marcar completado y guardar fecha
-  const toggleHabit = (id: number, isMorning: boolean) => {
-    const timestamp = new Date().toLocaleString();
+  // 👉 Cambiar la clase del body
+  useEffect(() => {
+    document.body.className = habitTime === "morning" ? "morning" : "night";
+  }, [habitTime]);
 
-    const update = (habits: Habit[]) =>
-      habits.map((h) =>
-        h.id === id
-          ? {
-              ...h,
-              completed: !h.completed,
-              history: !h.completed ? [...h.history, timestamp] : h.history,
-            }
-          : h
+  // Función para alternar hábitos completados
+  const toggleHabit = (id: number) => {
+    const date = new Date().toLocaleDateString();
+
+    if (habitTime === "morning") {
+      setMorningHabits(habits =>
+        habits.map(h =>
+          h.id === id
+            ? { ...h, completed: !h.completed, history: !h.completed ? [...h.history, date] : h.history }
+            : h
+        )
       );
-
-    if (isMorning) setMorningHabits(update(morningHabits));
-    else setNightHabits(update(nightHabits));
+    } else {
+      setNightHabits(habits =>
+        habits.map(h =>
+          h.id === id
+            ? { ...h, completed: !h.completed, history: !h.completed ? [...h.history, date] : h.history }
+            : h
+        )
+      );
+    }
   };
 
-  // ✅ Agregar hábito nuevo
+  // ✅ Función para agregar un hábito nuevo
   const addHabit = () => {
     if (!newHabit.trim()) return;
 
-    const newHabitObj: Habit = {
+    const habit: Habit = {
       id: Date.now(),
       name: newHabit,
       completed: false,
@@ -47,49 +61,46 @@ export default function Page() {
     };
 
     if (habitTime === "morning") {
-      setMorningHabits([...morningHabits, newHabitObj]);
+      setMorningHabits([...morningHabits, habit]);
     } else {
-      setNightHabits([...nightHabits, newHabitObj]);
+      setNightHabits([...nightHabits, habit]);
     }
 
     setNewHabit(""); // limpiar input
   };
 
+  const currentHabits = habitTime === "morning" ? morningHabits : nightHabits;
+
   return (
     <div className="app-container">
-      <h1>🌅🌙 Mis Hábitos</h1>
+      <h1>🌅 🌙 Mis Hábitos</h1>
 
-      {/* Formulario para agregar hábitos */}
-      <div className="add-habit">
-        <input
-          type="text"
-          value={newHabit}
-          onChange={(e) => setNewHabit(e.target.value)}
-          placeholder="Nuevo hábito..."
-        />
+      {/* Selector */}
+      <div className="selector">
+        <label htmlFor="habitTime">Selecciona momento:</label>
         <select
+          id="habitTime"
           value={habitTime}
           onChange={(e) => setHabitTime(e.target.value as "morning" | "night")}
         >
           <option value="morning">Mañana 🌅</option>
           <option value="night">Noche 🌙</option>
         </select>
+      </div>
+
+      {/* Formulario para agregar hábitos */}
+      <div className="add-habit">
+        <input
+          type="text"
+          placeholder="Nuevo hábito..."
+          value={newHabit}
+          onChange={(e) => setNewHabit(e.target.value)}
+        />
         <button onClick={addHabit}>➕ Agregar</button>
       </div>
 
-      {/* Lista mañana */}
-      <HabitList
-        title="🌅 Mañana"
-        habits={morningHabits}
-        toggleHabit={(id) => toggleHabit(id, true)}
-      />
-
-      {/* Lista noche */}
-      <HabitList
-        title="🌙 Noche"
-        habits={nightHabits}
-        toggleHabit={(id) => toggleHabit(id, false)}
-      />
+      {/* Lista de hábitos */}
+      <HabitList habits={currentHabits} toggleHabit={toggleHabit} />
     </div>
   );
 }
