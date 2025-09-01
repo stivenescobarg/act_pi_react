@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import HabitList from "../../components/HabitList";
 import { Habit } from "../../lib/types";
+import Link from "next/link";
 
 export default function Page() {
   const [habitTime, setHabitTime] = useState<"morning" | "night">("morning");
@@ -101,6 +102,13 @@ export default function Page() {
 
       {/* Lista de hábitos */}
       <HabitList habits={currentHabits} toggleHabit={toggleHabit} />
+      
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <Link href="/rutina">
+          <button>⚡ Ver Rutina Recomendada</button>
+        </Link>
+      </div>
     </div>
+     
   );
 }
