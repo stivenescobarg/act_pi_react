@@ -5,6 +5,7 @@ import HabitList from "../../components/HabitList";
 import { Habit } from "../../lib/types";
 import Link from "next/link";
 import UserProfile from "../../components/UserProfile";
+import ProgressChart from "../../components/ProgressChart";
 
 export default function Page() {
   const [habitTime, setHabitTime] = useState<"morning" | "night">("morning");
@@ -88,6 +89,8 @@ export default function Page() {
   };
 
   const currentHabits = habitTime === "morning" ? morningHabits : nightHabits;
+  const completedCount = currentHabits.filter(h => h.completed).length;
+  const totalCount = currentHabits.length;
 
    return (
     <div className="app-container">
@@ -124,6 +127,9 @@ export default function Page() {
         />
         <button onClick={addHabit}>➕ Agregar</button>
       </div>
+      
+      {/* Gráfico de progreso */}
+      <ProgressChart completed={completedCount} total={totalCount} />
 
       {/* Lista de hábitos */}
       <HabitList habits={currentHabits} toggleHabit={toggleHabit} />
