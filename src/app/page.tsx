@@ -4,9 +4,19 @@ import { useState, useEffect } from "react";
 import HabitList from "../../components/HabitList";
 import { Habit } from "../../lib/types";
 import Link from "next/link";
+import UserProfile from "../../components/UserProfile";
 
 export default function Page() {
   const [habitTime, setHabitTime] = useState<"morning" | "night">("morning");
+
+    const [userName, setUserName] = useState<string>("Invitado");
+  const [userAvatar, setUserAvatar] = useState<string>("");
+
+  // 👉 Cuando se actualiza el perfil
+  const handleUserUpdate = (name: string, avatar: string) => {
+    setUserName(name || "Invitado");
+    setUserAvatar(avatar || "");
+  };
 
   const [morningHabits, setMorningHabits] = useState<Habit[]>([
     { id: 1, name: "Beber agua", completed: false, history: [] },
@@ -25,6 +35,13 @@ export default function Page() {
   // 👉 Cambiar la clase del body
   useEffect(() => {
     document.body.className = habitTime === "morning" ? "morning" : "night";
+
+        // cargar usuario guardado
+    const savedName = localStorage.getItem("userName");
+    const savedAvatar = localStorage.getItem("userAvatar");
+    if (savedName) setUserName(savedName);
+    if (savedAvatar) setUserAvatar(savedAvatar);
+
   }, [habitTime]);
 
   // Función para alternar hábitos completados
@@ -72,9 +89,17 @@ export default function Page() {
 
   const currentHabits = habitTime === "morning" ? morningHabits : nightHabits;
 
-  return (
+   return (
     <div className="app-container">
-      <h1>🌅 🌙 Mis Hábitos</h1>
+      {/* 👤 Perfil del usuario */}
+      <div className="user-header">
+        {userAvatar && <img src={userAvatar} alt="avatar" className="avatar" />}
+        <h1>Hola, {userName}! 🌟</h1>
+      </div>
+
+      <UserProfile onUserUpdate={handleUserUpdate} />
+
+      <h2>🌅 🌙 Mis Hábitos</h2>
 
       {/* Selector */}
       <div className="selector">
