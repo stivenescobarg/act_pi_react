@@ -32,7 +32,7 @@ export default function RutinaPage() {
         descripcion: "20 min cardio suave + 15 min yoga para flexibilidad.",
         duracion: "35 min",
         intensidad: "Baja",
-        link: "https://www.youtube.com/watch?v=--jhKVdZOJM", // yoga beginner
+        link: "https://www.youtube.com/watch?v=tYwnSBkc_To", 
       });
     } else if (peso >= 60 && peso <= 80) {
       setRutina({
@@ -40,7 +40,7 @@ export default function RutinaPage() {
         descripcion: "30 min cardio + 20 min entrenamiento con pesas.",
         duracion: "50 min",
         intensidad: "Media",
-        link: "https://www.youtube.com/watch?v=ml6cT4AZdqI", // full body workout
+        link: "https://www.youtube.com/watch?v=nXidfXJ5FmM",
       });
     } else {
       setRutina({
@@ -48,7 +48,7 @@ export default function RutinaPage() {
         descripcion: "40 min pesas + 20 min HIIT para quemar grasa.",
         duracion: "60 min",
         intensidad: "Alta",
-        link: "https://www.youtube.com/watch?v=ml6cT4AZdqI", // HIIT intense
+        link: "https://www.youtube.com/watch?v=WnoCFnIiQHw",
       });
     }
   };
