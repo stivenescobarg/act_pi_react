@@ -9,12 +9,16 @@ interface UserProfileProps {
 export default function UserProfile({ onUserUpdate }: UserProfileProps) {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
+  const [isEditing, setIsEditing] = useState(true); // 🔹 empieza en edición
 
   // 🔹 Recuperar datos guardados
   useEffect(() => {
     const savedName = localStorage.getItem("userName");
     const savedAvatar = localStorage.getItem("userAvatar");
-    if (savedName) setName(savedName);
+    if (savedName) {
+      setName(savedName);
+      setIsEditing(false); // si ya tiene perfil, no mostrar formulario
+    }
     if (savedAvatar) setAvatar(savedAvatar);
   }, []);
 
@@ -23,7 +27,16 @@ export default function UserProfile({ onUserUpdate }: UserProfileProps) {
     localStorage.setItem("userName", name);
     localStorage.setItem("userAvatar", avatar);
     onUserUpdate(name, avatar);
+    setIsEditing(false); // ocultar formulario después de guardar
   };
+
+  if (!isEditing) {
+    return (
+      <div className="user-profile">
+        <button onClick={() => setIsEditing(true)}>✏️ Editar perfil</button>
+      </div>
+    );
+  }
 
   return (
     <div className="user-profile">
