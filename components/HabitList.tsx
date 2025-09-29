@@ -12,11 +12,12 @@ interface HabitListProps {
 export default function HabitList({ habits, toggleHabit }: HabitListProps) {
   return (
     <div>
-      {habits.map(habit => (
+      {habits.map(habit => ( //Para cada habit, renderiza un HabitItem.
         <HabitItem
           key={habit.id}
-          habit={habit}
+          habit={habit} // pasa el objeto completo del hábito a HabitItem.
           toggleHabit={toggleHabit}
+        // Esto permite que cada HabitItem sea independiente y tenga su propio botón de completar/desmarcar.
         />
       ))}
     </div>

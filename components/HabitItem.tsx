@@ -23,6 +23,12 @@ export default function HabitItem({ habit, toggleHabit }: HabitItemProps) {
         <details>
           <summary>📅 Historial</summary>
           <ul>
+            
+        {// Mapeo de las fechas en el historial
+            // Cada fecha se muestra en un elemento de lista
+            // La clave es el índice para evitar advertencias de React 
+            }
+
             {habit.history.map((date, i) => (
               <li key={i}>{date}</li>
             ))}

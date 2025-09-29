@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./page.module.css";
 
 interface Rutina {
   titulo: string;
@@ -32,7 +33,7 @@ export default function RutinaPage() {
         descripcion: "20 min cardio suave + 15 min yoga para flexibilidad.",
         duracion: "35 min",
         intensidad: "Baja",
-        link: "https://www.youtube.com/watch?v=tYwnSBkc_To", 
+        link: "https://www.youtube.com/watch?v=tYwnSBkc_To",
       });
     } else if (peso >= 60 && peso <= 80) {
       setRutina({
@@ -54,11 +55,11 @@ export default function RutinaPage() {
   };
 
   return (
-    <div className="app-container">
+    <div className={styles.appContainer}>
       <h1>⚡ Rutina Recomendada</h1>
       <p>Ingresa tu peso y recibe una rutina adaptada con un video de ejemplo:</p>
 
-      <div className="form-rutina">
+      <div className={styles.formRutina}>
         <input
           type="number"
           placeholder="Tu peso en kg"
@@ -69,11 +70,15 @@ export default function RutinaPage() {
       </div>
 
       {rutina && (
-        <div className="resultado">
+        <div className={styles.resultado}>
           <h2>{rutina.titulo}</h2>
           <p>{rutina.descripcion}</p>
-          <p><b>Duración:</b> {rutina.duracion}</p>
-          <p><b>Intensidad:</b> {rutina.intensidad}</p>
+          <p>
+            <b>Duración:</b> {rutina.duracion}
+          </p>
+          <p>
+            <b>Intensidad:</b> {rutina.intensidad}
+          </p>
 
           {rutina.link && (
             <a href={rutina.link} target="_blank" rel="noopener noreferrer">
